@@ -16,13 +16,13 @@ jobs:
       - name: 'Terraform Init'
         uses: hashicorp/terraform-github-actions@master
         with:
-          tf_actions_version: 0.12.26
+          tf_actions_version: 1.2.2
           tf_actions_subcommand: 'init'
 
       - name: 'Terraform Validate'
         uses: hashicorp/terraform-github-actions@master
         with:
-          tf_actions_version: 0.12.26
+          tf_actions_version: 1.2.2
           tf_actions_subcommand: 'validate'
 
       - name: Checkout code

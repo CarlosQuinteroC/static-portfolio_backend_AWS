@@ -4,8 +4,13 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 4.16"
     }
+  
   }
-
+  backend "s3" {
+      bucket = "backend-terraform-staticportfolio"
+      key    = "/terraform.tfstate"
+      region = "us-east-1"
+  }
   required_version = ">= 1.2.2"
 }
 
@@ -65,9 +70,11 @@ data "aws_iam_policy_document" "policy" {
                 "dynamodb:GetItem",
                 "dynamodb:PutItem",
                 "dynamodb:Scan",
-                "dynamodb:UpdateItem"]
+                "dynamodb:UpdateItem",
+                "s3:*"]
     resources = ["*"]
   }
+  
 }
 //create policy with policy document called "policy"
 resource "aws_iam_policy" "policy" {

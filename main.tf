@@ -8,7 +8,7 @@ terraform {
   }
   backend "s3" {
       bucket = "backend-terraform-staticportfolio"
-      key    = "/terraform.tfstate"
+      key    = "backend-terraform-staticportfolio/terraform.tfstate"
       region = "us-east-1"
   }
   required_version = ">= 1.2.2"

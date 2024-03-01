@@ -111,7 +111,7 @@ resource "aws_lambda_function" "test_lambda" {
 ///////////////////////////////////////
 // 3- SE CREA EL API GATEWAY
 resource "aws_apigatewayv2_api" "api" {
-  name          = "visitorsCounterAPI-try"
+  name          = "visitorsCounterAPIv2"
   protocol_type = "HTTP"
 }
 

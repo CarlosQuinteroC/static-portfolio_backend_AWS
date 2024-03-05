@@ -130,6 +130,9 @@ resource "aws_apigatewayv2_integration" "integration" {
   payload_format_version = "2.0"
 }
 
+
+
+
 resource "aws_lambda_permission" "apigw" {
   statement_id  = "AllowExecutionFromAPIGateway"
   action        = "lambda:InvokeFunction"
